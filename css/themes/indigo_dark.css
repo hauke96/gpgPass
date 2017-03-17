@@ -1,0 +1,69 @@
+/*
+These colors are based on the google color palette (https://material.io/guidelines/style/color.html).
+*/
+
+body, .window {
+    background-color: #424242;
+    color: #FFFFFF;
+}
+
+.sidebar {
+    /* Gray - 900 */
+    background-color: #212121;
+}
+
+.nav-group-item, .nav-group-title {
+    color: #FFFFFF;
+}
+
+.nav-group-item-content.active, .nav-group-item:active {
+    /* Indigo - 400 */
+    background-color: #7E57C2;
+    color: #FFFFFF;
+}
+
+.btn-group {
+    margin: 10px 5px 10px 10px !important;
+}
+
+.btn-group .active, .btn:active {
+    /* Indigo - 400 */
+    background-color: #7E57C2;
+    /* Gray - 400 */
+    border: 1px solid #BDBDBD;
+}
+
+.btn .icon {
+    color: #FFFFFF !important;
+}
+
+.btn-default {
+    color: #FFFFFF;
+    /* Gray - 400 */
+    border: 1px solid #BDBDBD;
+    /* Gray - 800 */
+    background-color: #424242;
+    background-image: none;
+    padding: 7px 15px 7px 15px;
+}
+
+.btn-group .btn+.btn {
+    /* Gray - 700 */
+    border: 1px solid #BDBDBD;
+}
+
+.toolbar {
+    /* Gray - 900 */
+    background-color: #212121;
+    background-image: none;
+}
+
+.toolbar-header {
+    /* Gray - 700 */
+    border-bottom: 1px solid #616161;
+}
+
+.toolbar-actions {
+    margin: 0;
+    padding: 0;
+}

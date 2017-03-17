@@ -1,9 +1,9 @@
 document.getElementById('passwords').click()
 
 document.body.addEventListener('click', function(event) {
-    hideAllSectionsAndDeselectButtons()
 
     if (event.target.dataset.section) {
+        hideAllSectionsAndDeselectButtons()
         //event.target.classList.add('is-selected')
 
         selectItem('.nav-group-item, .btn', event.target.dataset.section)
@@ -13,6 +13,18 @@ document.body.addEventListener('click', function(event) {
         document.getElementById(sectionId).classList.add('is-shown')
     }
 })
+
+document.getElementById('light-theme-button').addEventListener('click', function(event) {
+    swapTheme('indigo_light.css')
+})
+
+document.getElementById('dark-theme-button').addEventListener('click', function(event) {
+    swapTheme('indigo_dark.css')
+})
+
+function swapTheme(newThemeFileName) {
+    document.getElementById('theme').setAttribute('href', 'css/themes/' + newThemeFileName);
+}
 
 function selectItem(itemClass, sectionName) {
     const items = document.querySelectorAll(itemClass)

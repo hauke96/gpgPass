@@ -7,18 +7,47 @@ These colors are based on the google color palette (https://material.io/guidelin
     background-color: #E0E0E0;
 }
 
-.nav-group-item, .nav-group-title {
+.nav-group-item, .nav-group-title, .btn-default {
     /* Gray - 800 */
     color: #424242;
 }
 
-.nav-group-item-content.active, .nav-group-item:active, .btn-group .active {
+.nav-group-item-content.active, .nav-group-item:active {
     /* Indigo - 400 */
     background-color: #7E57C2;
     color: white;
 }
 
+.btn-group {
+    margin: 10px 5px 10px 10px !important;
+}
+
 .btn-group .active {
-    border: 1px solid transparent;
+    /* Indigo - 400 */
+    background-color: #7E57C2;
+    /* Gray - 400 */
+    border-color: #BDBDBD;
+}
+
+.btn-default {
+    /* Gray - 400 */
+    border-color: #BDBDBD;
     background-image: none;
+    padding: 7px 15px 7px 15px;
+}
+
+.toolbar {
+    /* Gray - 300 */
+    background-color: #E0E0E0;
+    background-image: none;
+}
+
+.toolbar-header {
+    /* Gray - 500 */
+    border-bottom: 1px solid #9E9E9E;
+}
+
+.toolbar-actions {
+    margin: 0;
+    padding: 0;
 }

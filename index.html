@@ -8,7 +8,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/photon.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/themes/indigo_light.css">
+    <link rel="stylesheet" href="css/themes/indigo_dark.css" id="theme">
 
     <link rel="import" href="sections/passwords.html">
     <link rel="import" href="sections/analysis.html">
@@ -29,17 +29,19 @@
                 </div>
 
                 <div class="btn-group">
-                    <button type="button" class="btn btn-default">
+                    <button type="button" class="btn btn-default" id="light-theme-button">
                       <span class="icon icon-light-up"></span> Light Theme
                     </button>
-                    <button class="btn btn-default">
+                    <button class="btn btn-default" id="dark-theme-button">
                       <span class="icon icon-light-down"></span> Dark Theme
                     </button>
                 </div>
 
-                <button class="btn btn-default pull-right">
+                <div class="btn-group pull-right">
+                    <button class="btn btn-default">
                   Exit <span class="icon icon-cancel-circled"></span>
                 </button>
+                </div>
             </div>
         </header>
         <div class="window-content">

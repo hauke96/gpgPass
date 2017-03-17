@@ -6,17 +6,23 @@ This style file is a mixture of the css file from the PHOTON project (s. [1] and
 */
 
 @charset "UTF-8";
-.sidebar {
-    width: 250px;
+.window {
+    position: relative;
+    height: 100%;
+    flex-direction: row;
 }
 
-.pane-group {
+.content {
+    flex: 1;
     position: relative;
+    overflow: hidden;
 }
 
 .nav-group {
+    width: 250px;
     height: 100%;
     display: block;
+    overflow-y: auto;
 }
 
 .nav-group-title {
@@ -30,7 +36,6 @@ This style file is a mixture of the css file from the PHOTON project (s. [1] and
     width: 250px;
     border: none;
     outline: none;
-    background-color: transparent;
     text-align: left;
     transition: width 0.2s ease-in, background-color 0.2s ease-in;
 }
@@ -51,6 +56,10 @@ This style file is a mixture of the css file from the PHOTON project (s. [1] and
 
 .section {
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     margin: 0 0 0 40px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -71,8 +80,24 @@ This style file is a mixture of the css file from the PHOTON project (s. [1] and
     transition: visibility 0s 0s linear, opacity 0.2s ease-out, transform 0.2s ease-out;
 }
 
+.section-wrapper {
+    min-width: 450px;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px 20px 30px;
+}
+
 .icon {
     pointer-events: none;
     margin-right: 5px;
     color: inherit !important;
+}
+
+
+/*
+Pure HTML styles
+*/
+
+tbody {
+    background-color: transparent;
 }

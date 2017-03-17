@@ -7,13 +7,14 @@ body, .window {
     color: #FFFFFF;
 }
 
-.sidebar {
+.nav-group {
     /* Gray - 900 */
     background-color: #212121;
 }
 
 .nav-group-item, .nav-group-title {
     color: #FFFFFF;
+    background-color: transparent;
 }
 
 .nav-group-item-content.active, .nav-group-item:active {

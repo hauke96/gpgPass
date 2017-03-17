@@ -16,54 +16,48 @@
 </head>
 
 <body>
-    <div class="window">
-        <header class="toolbar toolbar-header">
-            <div class="toolbar-actions">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default" data-section="passwords">
+    <header class="toolbar toolbar-header">
+        <div class="toolbar-actions">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default" data-section="passwords">
                       <span class="icon icon-home"></span> Home
                     </button>
-                    <button class="btn btn-default">
+                <button class="btn btn-default">
                       <span class="icon icon-arrows-ccw"></span>Sync
                     </button>
-                </div>
+            </div>
 
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default" id="light-theme-button">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default" id="light-theme-button">
                       <span class="icon icon-light-up"></span> Light Theme
                     </button>
-                    <button class="btn btn-default" id="dark-theme-button">
+                <button class="btn btn-default" id="dark-theme-button">
                       <span class="icon icon-light-down"></span> Dark Theme
                     </button>
-                </div>
+            </div>
 
-                <div class="btn-group pull-right">
-                    <button class="btn btn-default">
+            <div class="btn-group pull-right">
+                <button class="btn btn-default">
                   Exit <span class="icon icon-cancel-circled"></span>
                 </button>
-                </div>
             </div>
-        </header>
-        <div class="window-content">
-            <div class="pane-group">
-                <div class="sidebar">
-                    <nav class="nav-group">
-                        <h5 class="nav-group-title" font-style="monospace"><script>document.write(require('./package.json').name)</script></h5>
-                        <button class="nav-group-item nav-group-item-content" data-section="passwords">
+        </div>
+    </header>
+    <div class="window">
+        <nav class="nav-group">
+            <h5 class="nav-group-title" font-style="monospace"><script>document.write(require('./package.json').name)</script></h5>
+            <button class="nav-group-item nav-group-item-content" data-section="passwords">
                             <div class="icon icon-key"></div> Saved passwords
                         </button>
-                        <button class="nav-group-item nav-group-item-content" data-section="analysis">
+            <button class="nav-group-item nav-group-item-content" data-section="analysis">
                             <div class="icon icon-flashlight"></div> Security analysis
                         </button>
-                        <button class="nav-group-item nav-group-item-content" data-section="settings">
+            <button class="nav-group-item nav-group-item-content" data-section="settings">
                             <div class="icon icon-tools"></div> Settings
                         </button>
-                    </nav>
-                </div>
-            </div>
+        </nav>
 
-            <main class="content js-content"></main>
-        </div>
+        <main class="content js-content"></main>
     </div>
 
     <script>

@@ -39,7 +39,7 @@ This style file is a mixture of the css file from the PHOTON project (s. [1] and
     margin: 5px 10px 5px 0px;
 }
 
-.nav-group-item-content.is-selected, .nav-group-item:active {
+.nav-group-item-content.active, .nav-group-item:active {
     width: 270px;
     transition: width 0.2s ease-out, background-color 0.2s ease-out;
 }

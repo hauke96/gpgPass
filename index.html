@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/photon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="import" href="sections/passwords.html">
+    <link rel="import" href="sections/analysis.html">
+    <link rel="import" href="sections/settings.html">
+</head>
+
+<body>
+    <div class="window">
+        <div class="window-content">
+            <div class="pane-group">
+                <div class="sidebar">
+                    <nav class="nav-group">
+                        <h5 class="nav-group-title" font-style="monospace"><script>document.write(require('./package.json').name)</script></h5>
+                        <button class="nav-group-item nav-group-item-content" data-section="passwords">
+                            <div class="icon icon-key"></div> Saved passwords
+                        </button>
+                        <button class="nav-group-item nav-group-item-content" data-section="analysis">
+                            <div class="icon icon-flashlight"></div> Security analysis
+                        </button>
+                        <button class="nav-group-item nav-group-item-content" data-section="settings">
+                            <div class="icon icon-tools"></div> Settings
+                        </button>
+                    </nav>
+                </div>
+            </div>
+
+            <main class="content js-content"></main>
+        </div>
+    </div>
+
+    <script>
+        const links = document.querySelectorAll('link[rel="import"]')
+
+        // Import and add each page to the DOM
+        Array.prototype.forEach.call(links, function(link) {
+            let template = link.import.querySelector('.page-template')
+            let clone = document.importNode(template.content, true)
+            document.querySelector('.content').appendChild(clone)
+        })
+
+        require('./scripts/nav')
+    </script>
+</body>
+
+</html>

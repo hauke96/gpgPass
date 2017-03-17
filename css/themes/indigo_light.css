@@ -12,8 +12,13 @@ These colors are based on the google color palette (https://material.io/guidelin
     color: #424242;
 }
 
-.nav-group-item-content.active, .nav-group-item:active {
+.nav-group-item-content.active, .nav-group-item:active, .btn-group .active {
     /* Indigo - 400 */
-    background-color: #5C6BC0;
+    background-color: #7E57C2;
     color: white;
+}
+
+.btn-group .active {
+    border: 1px solid transparent;
+    background-image: none;
 }

@@ -1,77 +1,79 @@
 <!DOCTYPE html>
 <html>
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Hello World!</title>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
+	    <!-- Stylesheets -->
+	    <!-- <link rel="stylesheet" href="css/photon.css">-->
+	    <link rel="stylesheet" href="css/style.css">
+	    <link rel="stylesheet" href="css/icons.css">
+	    <link rel="stylesheet" href="css/ui.css">
+	    <link rel="stylesheet" href="css/themes/indigo_dark.css" id="theme">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/photon.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/themes/indigo_dark.css" id="theme">
+	    <link rel="import" href="src/sections/passwords/passwords.html">
+	    <link rel="import" href="src/sections/analysis/analysis.html">
+	    <link rel="import" href="src/sections/settings/settings.html">
+	</head>
 
-    <link rel="import" href="sections/passwords.html">
-    <link rel="import" href="sections/analysis.html">
-    <link rel="import" href="sections/settings.html">
-</head>
+	<body>
+	    <header class="toolbar toolbar-header">
+	        <div class="toolbar-actions">
+	            <div class="buttonGroup" style="margin-left: 10px">
+	                <button type="button" class="button" data-section="passwords">
+	                      <span class="buttonRightIcon icon-home"></span> Home
+	                </button>
+	                <button class="button">
+	                      <span class="buttonRightIcon icon-arrows-ccw"></span>Sync
+	                </button>
+	            </div>
 
-<body>
-    <header class="toolbar toolbar-header">
-        <div class="toolbar-actions">
-            <div class="btn-group">
-                <button type="button" class="btn btn-default" data-section="passwords">
-                      <span class="icon icon-home"></span> Home
-                    </button>
-                <button class="btn btn-default">
-                      <span class="icon icon-arrows-ccw"></span>Sync
-                    </button>
-            </div>
+	            <div class="buttonGroup" >
+	                <button type="button" class="button" id="light-theme-button">
+	                      <span class="buttonRightIcon icon-light-up"></span> Light Theme
+	                </button>
+	                <button class="button" id="dark-theme-button">
+	                      <span class="buttonRightIcon icon-light-down"></span> Dark Theme
+	                </button>
+	            </div>
 
-            <div class="btn-group">
-                <button type="button" class="btn btn-default" id="light-theme-button">
-                      <span class="icon icon-light-up"></span> Light Theme
-                    </button>
-                <button class="btn btn-default" id="dark-theme-button">
-                      <span class="icon icon-light-down"></span> Dark Theme
-                    </button>
-            </div>
+	            <div class="buttonGroup pushRight" style="margin-right: 10px">
+	                <button class="button">
+	                  <span class="buttonRightIcon icon-cancel-circled"></span> Exit
+	                </button>
+	            </div>
+	        </div>
+	    </header>
+		<div class="window">
+		    <nav class="navigation">
+		        <h5 class="navigationTitle" font-style="monospace"><script>document.write(require('./package.json').name)</script></h5>
+		        <button class="navigationItem navigationItemContent" data-section="passwords">
+		            <div class="buttonRightIcon icon-key"></div> Saved passwords
+		        </button>
+		        <button class="navigationItem navigationItemContent" data-section="analysis">
+		            <div class="buttonRightIcon icon-flashlight"></div> Security analysis
+		        </button>
+		        <button class="navigationItem navigationItemContent" data-section="settings">
+		            <div class="buttonRightIcon icon-tools"></div> Settings
+		        </button>
+		    </nav>
 
-            <div class="btn-group pull-right">
-                <button class="btn btn-default">
-                  Exit <span class="icon icon-cancel-circled"></span>
-                </button>
-            </div>
-        </div>
-    </header>
-    <div class="window">
-        <nav class="nav-group">
-            <h5 class="nav-group-title" font-style="monospace"><script>document.write(require('./package.json').name)</script></h5>
-            <button class="nav-group-item nav-group-item-content" data-section="passwords">
-                            <div class="icon icon-key"></div> Saved passwords
-                        </button>
-            <button class="nav-group-item nav-group-item-content" data-section="analysis">
-                            <div class="icon icon-flashlight"></div> Security analysis
-                        </button>
-            <button class="nav-group-item nav-group-item-content" data-section="settings">
-                            <div class="icon icon-tools"></div> Settings
-                        </button>
-        </nav>
+		    <main class="content js-content"></main>
+		</div>
 
-        <main class="content js-content"></main>
-    </div>
+	    <script>
+	        const links = document.querySelectorAll('link[rel="import"]')
 
-    <script>
-        const links = document.querySelectorAll('link[rel="import"]')
+	        // Add each page to the DOM
+	        Array.prototype.forEach.call(links, function(link) {
+	            let template = link.import.querySelector('.page-template')
+	            let clone = document.importNode(template.content, true)
+	            document.querySelector('.content').appendChild(clone)
+	        })
 
-        // Import and add each page to the DOM
-        Array.prototype.forEach.call(links, function(link) {
-            let template = link.import.querySelector('.page-template')
-            let clone = document.importNode(template.content, true)
-            document.querySelector('.content').appendChild(clone)
-        })
-
-        require('./scripts/nav')
-    </script>
-</body>
-
+			// Import all needed scripts
+	        require('./src/navigation/nav')
+			require("./src/header/controller")
+	    </script>
+	</body>
 </html>

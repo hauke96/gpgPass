@@ -1,103 +1,35 @@
 /*
-This style file is a mixture of the css file from the PHOTON project (s. [1] and the photon.css file), some css styles from the demo app of electron [1] and own customizations.
-
-[0] http://photonkit.com
-[1] https://github.com/electron/electron-api-demos
+This style file contains all global styles for e.g. tables and listings.
 */
 
-@charset "UTF-8";
-.window {
-    position: relative;
-    height: 100%;
-    flex-direction: row;
+@font-face {
+  font-family: "photon-entypo";
+  src: url("../fonts/photon-entypo.eot");
+  src: url("../fonts/photon-entypo.eot?#iefix") format("eot"), url("../fonts/photon-entypo.woff") format("woff"), url("../fonts/photon-entypo.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-.content {
-    flex: 1;
-    position: relative;
-    overflow: hidden;
+html {
+	height: 100%;
+	width: 100%;
 }
 
-.nav-group {
-    width: 250px;
-    height: 100%;
-    display: block;
-    overflow-y: auto;
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: system, -apple-system, ".SFNSDisplay-Regular", "Helvetica Neue", Helvetica, "Segoe UI", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #333;
+  background-color: transparent;
 }
-
-.nav-group-title {
-    padding: 10px 10px 2px;
-    font-size: 20pt;
-    text-align: center;
-}
-
-.nav-group-item {
-    padding: 10px 20px 10px 20px;
-    width: 250px;
-    border: none;
-    outline: none;
-    text-align: left;
-    transition: width 0.2s ease-in, background-color 0.2s ease-in;
-}
-
-.nav-group-item-content {
-    margin: 5px 10px 5px 0px;
-}
-
-.nav-group-item-content.active, .nav-group-item:active {
-    width: 270px;
-    transition: width 0.2s ease-out, background-color 0.2s ease-out;
-}
-
-.content.is-shown {
-    visibility: visible;
-    opacity: 1;
-}
-
-.section {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0 0 0 40px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    color: var(--color-accent);
-    /* Hide */
-    pointer-events: none;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateX(-40px);
-    transition: visibility 0s 0.2s linear, opacity 0.2s ease-in, transform 0.2s ease-in;
-}
-
-.section.is-shown {
-    pointer-events: auto;
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(0);
-    transition: visibility 0s 0s linear, opacity 0.2s ease-out, transform 0.2s ease-out;
-}
-
-.section-wrapper {
-    min-width: 450px;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 40px 20px 20px 30px;
-}
-
-.icon {
-    pointer-events: none;
-    margin-right: 5px;
-    color: inherit !important;
-}
-
-
-/*
-Pure HTML styles
-*/
 
 tbody {
     background-color: transparent;
+}
+
+button {
+	font: inherit;
 }
